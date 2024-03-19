@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import login from '../../../assets/images/login/login.svg'
 const Login = () => {
 
@@ -38,6 +39,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <input className="btn btn-neutral text-orange-500" type="submit" value='login' />
                         </div>
+                        <p>New to Car doctors? <Link  to='/signup' ><small className='text-orange-500'>sign up</small></Link></p>
                     </form>
                 </div>
             </div>
