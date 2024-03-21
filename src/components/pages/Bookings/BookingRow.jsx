@@ -2,8 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 
-const BookingRow = ({ booking,handleDelete }) => {
-    const { customerName, title, price, img, date,_id } = booking;
+const BookingRow = ({ booking,handleDelete,handleBookingConfirm }) => {
+    const { customerName, title, price, img, date,_id,status } = booking;
      
   
 
@@ -32,7 +32,9 @@ const BookingRow = ({ booking,handleDelete }) => {
             <td>{price}</td>
             <td>{date}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                { status==='confirm'? <span className="font-bold text-primary">Confirmed</span>
+                  : 
+                 <button onClick={()=>handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Confirm</button>}
             </th>
         </tr>
     );
